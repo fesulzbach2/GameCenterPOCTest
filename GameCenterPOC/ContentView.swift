@@ -6,18 +6,29 @@
 //
 
 import SwiftUI
+import GameKit
 
 struct ContentView: View {
+    @StateObject var gameCenter = GameCenterHelper()
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        VStack(spacing: 20) {
+            if gameCenter.isAuthenticated {
+                Text("✅ Autenticado como \(GKLocalPlayer.local.displayName)")
+                Button("Encontrar Partida") {
+                    gameCenter.startMatchmaking()
+                }
+                Button("Enviar Mensagem") {
+                    gameCenter.sendMessage("Oi, pessoal! 😎")
+                }
+            } else {
+                Text("⏳ Autenticando no Game Center...")
+            }
         }
         .padding()
     }
 }
+
 
 #Preview {
     ContentView()
