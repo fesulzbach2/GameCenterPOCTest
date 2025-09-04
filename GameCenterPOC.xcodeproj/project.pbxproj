@@ -6,27 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		75F623F12E6760E7003404B9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75F623DB2E6760E6003404B9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 75F623E22E6760E6003404B9;
-			remoteInfo = GameCenterPOC;
-		};
-		75F623FB2E6760E7003404B9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75F623DB2E6760E6003404B9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 75F623E22E6760E6003404B9;
-			remoteInfo = GameCenterPOC;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		75F623E32E6760E6003404B9 /* GameCenterPOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameCenterPOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		75F623F02E6760E7003404B9 /* GameCenterPOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameCenterPOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		75F623FA2E6760E7003404B9 /* GameCenterPOCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GameCenterPOCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,34 +16,10 @@
 			path = GameCenterPOC;
 			sourceTree = "<group>";
 		};
-		75F623F32E6760E7003404B9 /* GameCenterPOCTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GameCenterPOCTests;
-			sourceTree = "<group>";
-		};
-		75F623FD2E6760E7003404B9 /* GameCenterPOCUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = GameCenterPOCUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		75F623E02E6760E6003404B9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		75F623ED2E6760E7003404B9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		75F623F72E6760E7003404B9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,8 +33,6 @@
 			isa = PBXGroup;
 			children = (
 				75F623E52E6760E6003404B9 /* GameCenterPOC */,
-				75F623F32E6760E7003404B9 /* GameCenterPOCTests */,
-				75F623FD2E6760E7003404B9 /* GameCenterPOCUITests */,
 				75F623E42E6760E6003404B9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,8 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				75F623E32E6760E6003404B9 /* GameCenterPOC.app */,
-				75F623F02E6760E7003404B9 /* GameCenterPOCTests.xctest */,
-				75F623FA2E6760E7003404B9 /* GameCenterPOCUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -117,52 +70,6 @@
 			productReference = 75F623E32E6760E6003404B9 /* GameCenterPOC.app */;
 			productType = "com.apple.product-type.application";
 		};
-		75F623EF2E6760E7003404B9 /* GameCenterPOCTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 75F624072E6760E7003404B9 /* Build configuration list for PBXNativeTarget "GameCenterPOCTests" */;
-			buildPhases = (
-				75F623EC2E6760E7003404B9 /* Sources */,
-				75F623ED2E6760E7003404B9 /* Frameworks */,
-				75F623EE2E6760E7003404B9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				75F623F22E6760E7003404B9 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				75F623F32E6760E7003404B9 /* GameCenterPOCTests */,
-			);
-			name = GameCenterPOCTests;
-			packageProductDependencies = (
-			);
-			productName = GameCenterPOCTests;
-			productReference = 75F623F02E6760E7003404B9 /* GameCenterPOCTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		75F623F92E6760E7003404B9 /* GameCenterPOCUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 75F6240A2E6760E7003404B9 /* Build configuration list for PBXNativeTarget "GameCenterPOCUITests" */;
-			buildPhases = (
-				75F623F62E6760E7003404B9 /* Sources */,
-				75F623F72E6760E7003404B9 /* Frameworks */,
-				75F623F82E6760E7003404B9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				75F623FC2E6760E7003404B9 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				75F623FD2E6760E7003404B9 /* GameCenterPOCUITests */,
-			);
-			name = GameCenterPOCUITests;
-			packageProductDependencies = (
-			);
-			productName = GameCenterPOCUITests;
-			productReference = 75F623FA2E6760E7003404B9 /* GameCenterPOCUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -175,14 +82,6 @@
 				TargetAttributes = {
 					75F623E22E6760E6003404B9 = {
 						CreatedOnToolsVersion = 16.4;
-					};
-					75F623EF2E6760E7003404B9 = {
-						CreatedOnToolsVersion = 16.4;
-						TestTargetID = 75F623E22E6760E6003404B9;
-					};
-					75F623F92E6760E7003404B9 = {
-						CreatedOnToolsVersion = 16.4;
-						TestTargetID = 75F623E22E6760E6003404B9;
 					};
 				};
 			};
@@ -201,28 +100,12 @@
 			projectRoot = "";
 			targets = (
 				75F623E22E6760E6003404B9 /* GameCenterPOC */,
-				75F623EF2E6760E7003404B9 /* GameCenterPOCTests */,
-				75F623F92E6760E7003404B9 /* GameCenterPOCUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		75F623E12E6760E6003404B9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		75F623EE2E6760E7003404B9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		75F623F82E6760E7003404B9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -239,34 +122,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75F623EC2E6760E7003404B9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		75F623F62E6760E7003404B9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		75F623F22E6760E7003404B9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 75F623E22E6760E6003404B9 /* GameCenterPOC */;
-			targetProxy = 75F623F12E6760E7003404B9 /* PBXContainerItemProxy */;
-		};
-		75F623FC2E6760E7003404B9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 75F623E22E6760E6003404B9 /* GameCenterPOC */;
-			targetProxy = 75F623FB2E6760E7003404B9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		75F624022E6760E7003404B9 /* Debug */ = {
@@ -396,11 +252,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GameCenterPOC/GameCenterPOC.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = A67PA4386R;
+				DEVELOPMENT_TEAM = A67PA4386R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -416,7 +271,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = academy.GameCenterPOC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = profileGC;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -429,11 +283,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = GameCenterPOC/GameCenterPOC.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = A67PA4386R;
+				DEVELOPMENT_TEAM = A67PA4386R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -449,82 +302,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = academy.GameCenterPOC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = profileGC;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		75F624082E6760E7003404B9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A67PA4386R;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = academy.GameCenterPOCTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GameCenterPOC.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GameCenterPOC";
-			};
-			name = Debug;
-		};
-		75F624092E6760E7003404B9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A67PA4386R;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.5;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = academy.GameCenterPOCTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GameCenterPOC.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GameCenterPOC";
-			};
-			name = Release;
-		};
-		75F6240B2E6760E7003404B9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A67PA4386R;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = academy.GameCenterPOCUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GameCenterPOC;
-			};
-			name = Debug;
-		};
-		75F6240C2E6760E7003404B9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = A67PA4386R;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = academy.GameCenterPOCUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GameCenterPOC;
 			};
 			name = Release;
 		};
@@ -545,24 +325,6 @@
 			buildConfigurations = (
 				75F624052E6760E7003404B9 /* Debug */,
 				75F624062E6760E7003404B9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		75F624072E6760E7003404B9 /* Build configuration list for PBXNativeTarget "GameCenterPOCTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				75F624082E6760E7003404B9 /* Debug */,
-				75F624092E6760E7003404B9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		75F6240A2E6760E7003404B9 /* Build configuration list for PBXNativeTarget "GameCenterPOCUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				75F6240B2E6760E7003404B9 /* Debug */,
-				75F6240C2E6760E7003404B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
