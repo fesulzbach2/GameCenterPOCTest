@@ -2,7 +2,7 @@ import SwiftUI
 import GameKit
 
 struct MessagesView: View {
-    @StateObject private var gameCenter = GameCenterHelper()
+    @ObservedObject var gameCenter: GameCenterHelper
     @State private var typedMessage = ""
     
     var body: some View {
@@ -10,7 +10,7 @@ struct MessagesView: View {
             // Área de matchmaking / status
             HStack {
                 if gameCenter.isAuthenticated {
-                    Text("Autenticado: \(GKLocalPlayer.local.displayName)")
+                    Text("Autenticado! Top: \(GKLocalPlayer.local.displayName)")
                         .font(.subheadline)
                         .foregroundColor(.green)
                     Spacer()
@@ -59,6 +59,10 @@ struct MessagesView: View {
                 }
             }
             .padding()
+        }
+        .onAppear {
+            // Verificar se há convites pendentes quando a view aparecer
+            gameCenter.processPendingInvite()
         }
     }
 }

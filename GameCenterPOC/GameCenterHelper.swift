@@ -23,6 +23,29 @@ class GameCenterHelper: NSObject, ObservableObject {
     override init() {
         super.init()
         authenticatePlayer()
+        setupAppStateObserver()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    // Observar mudanças no estado do app
+    private func setupAppStateObserver() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(appDidBecomeActive),
+            name: UIApplication.didBecomeActiveNotification,
+            object: nil
+        )
+    }
+    
+    @objc private func appDidBecomeActive() {
+        // Quando o app se torna ativo, verificar se há convites pendentes
+        // Isso é importante quando o app é aberto através de um convite
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.processPendingInvite()
+        }
     }
     
     // Autenticação
@@ -40,9 +63,10 @@ class GameCenterHelper: NSObject, ObservableObject {
                 // Registrar para ouvir convites
                 GKLocalPlayer.local.register(self)
                 
-                // NÃO processar convites automaticamente ao abrir o app
-                // Apenas limpar qualquer convite pendente
-                self.clearPendingInvites()
+                // Verificar se há convites pendentes após autenticação
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.processPendingInvite()
+                }
                 
             } else {
                 print("❌ Falha ao autenticar: \(String(describing: error))")
@@ -53,21 +77,18 @@ class GameCenterHelper: NSObject, ObservableObject {
         }
     }
     
-    // Limpar convites pendentes sem processá-los
-    private func clearPendingInvites() {
-        // Isso previne que convites antigos sejam processados ao abrir o app
-        pendingInvite = nil
-        pendingPlayersToInvite = nil
-    }
-    
-    // Processar convite pendente (chamado apenas quando necessário)
+    // Processar convite pendente (chamado automaticamente)
     func processPendingInvite() {
         if let invite = pendingInvite {
+            print("📩 Processando convite pendente de \(invite.sender.displayName)")
             pendingInvite = nil
             acceptInvite(invite)
         } else if let players = pendingPlayersToInvite {
+            print("📩 Processando solicitação de partida pendente para \(players.count) jogadores")
             pendingPlayersToInvite = nil
             acceptMatchRequest(with: players)
+        } else {
+            print("ℹ️ Nenhum convite pendente para processar")
         }
     }
     
@@ -188,37 +209,31 @@ extension GameCenterHelper: GKLocalPlayerListener {
     func player(_ player: GKPlayer, didAccept invite: GKInvite) {
         print("📩 Convite recebido de \(invite.sender.displayName)")
         
-        // IMPORTANTE: Verificar se o app está em primeiro plano
-        // Se o app foi aberto através de um convite, processar
-        // Se o app já estava aberto, armazenar para processar depois
+        // Armazenar o convite para processamento
+        pendingInvite = invite
         
+        // Se o app estiver ativo, processar imediatamente
         if UIApplication.shared.applicationState == .active {
-            // App já estava ativo - armazenar convite e deixar o usuário decidir
-            pendingInvite = invite
-            
-            // Você pode notificar o usuário aqui se quiser
-            // Por exemplo, mostrar um alerta ou banner
-            print("⏳ Convite armazenado. Use processPendingInvite() para aceitar.")
-            
-            // OU processar imediatamente se preferir
-            // acceptInvite(invite)
-        } else {
-            // App foi aberto através do convite - processar imediatamente
-            acceptInvite(invite)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.processPendingInvite()
+            }
         }
+        // Se o app não estiver ativo, será processado quando se tornar ativo
     }
     
     // Recebimento de solicitação de partida
     func player(_ player: GKPlayer, didRequestMatchWithRecipients recipientPlayers: [GKPlayer]) {
         print("📩 Solicitação de partida recebida para \(recipientPlayers.count) jogadores")
         
+        // Armazenar a solicitação para processamento
+        pendingPlayersToInvite = recipientPlayers
+        
+        // Se o app estiver ativo, processar imediatamente
         if UIApplication.shared.applicationState == .active {
-            // App já estava ativo - armazenar para processar depois
-            pendingPlayersToInvite = recipientPlayers
-            print("⏳ Solicitação armazenada. Use processPendingInvite() para aceitar.")
-        } else {
-            // App foi aberto através da solicitação - processar imediatamente
-            acceptMatchRequest(with: recipientPlayers)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.processPendingInvite()
+            }
         }
+        // Se o app não estiver ativo, será processado quando se tornar ativo
     }
 }

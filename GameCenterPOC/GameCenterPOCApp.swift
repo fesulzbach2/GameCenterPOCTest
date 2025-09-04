@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct GameCenterPOCApp: App {
+    @StateObject private var gameCenter = GameCenterHelper()
+    
     var body: some Scene {
         WindowGroup {
-            MessagesView()
+            MessagesView(gameCenter: gameCenter)
         }
     }
 }
